@@ -34,12 +34,13 @@ app = FastAPI(
 FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
+        allow_origins=[
         FRONTEND_ORIGIN,
         "http://localhost:5173",
         "http://localhost:3000",
         "http://127.0.0.1:5173",
-    ],
+        "https://intelligent-carrer-ai-vrfn.vercel.app",
+        ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
